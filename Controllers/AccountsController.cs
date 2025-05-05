@@ -1,53 +1,31 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BankAPI.Models;
+﻿using BankingApi.Data;
+using BankingApi.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-namespace BankAPI.Controllers
+namespace BankingApi.Controllers
 {
-    [ApiController]
     [Route("banking/accounts")]
+    [ApiController]
     public class AccountsController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<AccountResponse> GetAccounts()
-        {
-            // In a real application, this would come from a database
-            var accounts = new List<Account>
-            {
-                new Account 
-                { 
-                    AccountId = "12345678", 
-                    DisplayName = "Everyday Savings", 
-                    AccountType = "SAVINGS",
-                    AccountStatus = "OPEN",
-                    Currency = "AUD",
-                    OpeningDate = "2020-01-01",
-                    AvailableBalance = 1250.42m
-                },
-                new Account 
-                { 
-                    AccountId = "87654321", 
-                    DisplayName = "Investment Account", 
-                    AccountType = "INVESTMENT",
-                    AccountStatus = "OPEN",
-                    Currency = "AUD",
-                    OpeningDate = "2019-05-20",
-                    AvailableBalance = 15720.00m
-                }
-            };
+        private readonly BankingContext _context;
 
-            var response = new AccountResponse
+        public AccountsController(BankingContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAccounts()
+        {
+            var accounts = await _context.Accounts.ToListAsync();
+
+            var response = new AccountsResponse
             {
-                Data = accounts,
-                Links = new Links
+                data = new AccountsData
                 {
-                    Self = "https://api.bigpurplebank.com/banking/accounts",
-                    First = "https://api.bigpurplebank.com/banking/accounts?page=1",
-                    Last = "https://api.bigpurplebank.com/banking/accounts?page=1"
-                },
-                Meta = new Meta
-                {
-                    TotalRecords = accounts.Count,
-                    TotalPages = 1
+                    accounts = accounts
                 }
             };
 
