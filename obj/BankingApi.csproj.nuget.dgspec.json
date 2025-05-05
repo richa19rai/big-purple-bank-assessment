@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RICHA RAI\\BigPurpleBank\\BankingApi\\BankingApi.csproj": {}
+    "C:\\Users\\RICHA RAI\\BigPurpleBank\\bankingapi\\BankingApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RICHA RAI\\BigPurpleBank\\BankingApi\\BankingApi.csproj": {
+    "C:\\Users\\RICHA RAI\\BigPurpleBank\\bankingapi\\BankingApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RICHA RAI\\BigPurpleBank\\BankingApi\\BankingApi.csproj",
+        "projectUniqueName": "C:\\Users\\RICHA RAI\\BigPurpleBank\\bankingapi\\BankingApi.csproj",
         "projectName": "BankingApi",
-        "projectPath": "C:\\Users\\RICHA RAI\\BigPurpleBank\\BankingApi\\BankingApi.csproj",
+        "projectPath": "C:\\Users\\RICHA RAI\\BigPurpleBank\\bankingapi\\BankingApi.csproj",
         "packagesPath": "C:\\Users\\RICHA RAI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RICHA RAI\\BigPurpleBank\\BankingApi\\obj\\",
+        "outputPath": "C:\\Users\\RICHA RAI\\BigPurpleBank\\bankingapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
