@@ -1,12 +1,15 @@
 ﻿using BankingApi.Data;
 using BankingApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankingApi.Controllers
 {
-    [Route("banking/accounts")]
+    
+    [Authorize]
     [ApiController]
+    [Route("banking/accounts")]
     public class AccountsController : ControllerBase
     {
         private readonly BankingContext _context;

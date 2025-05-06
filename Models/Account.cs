@@ -1,8 +1,10 @@
-﻿namespace BankingApi.Models
+﻿using System.ComponentModel.DataAnnotations;
+namespace BankingApi.Models
 {
     public class Account
     {
-        public string? AccountId { get; set; }
+        [Key]
+        public string AccountId { get; set; }
         public string? DisplayName { get; set; }
         public string? AccountType { get; set; }
         public string? AccountStatus { get; set; }
